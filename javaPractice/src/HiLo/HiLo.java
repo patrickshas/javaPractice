@@ -8,33 +8,40 @@ public class HiLo {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		int theNumber = (int)(Math.random() * 100 + 1);
-//		System.out.println( theNumber );
+		String playAgain = "";
 		
-		int guess = 0;
-		
-		while (guess != theNumber) {
+		do {
+			int theNumber = (int)(Math.random() * 100 + 1);
+//			System.out.println( theNumber );
 			
-			System.out.println("Guess a number between 1 and 100");
+			int guess = 0;
 			
-			guess = scan.nextInt();
-			
-			System.out.println("You entered " + guess + ".");
-			
-			if (guess < theNumber) {
+			while (guess != theNumber) {
 				
-				System.out.println(guess + " is too low. Try again!");
+				System.out.println("Guess a number between 1 and 100");
 				
-			}	else if (guess > theNumber) {
+				guess = scan.nextInt();
 				
-				System.out.println(guess + " is too high. Try again!");
+				System.out.println("You entered " + guess + ".");
 				
-			}	else {
-				System.out.println("Your guess " + guess + " is correct. Thanks you!");
-			}
+				if (guess < theNumber) {
 					
-		}
-		
+					System.out.println(guess + " is too low. Try again!");
+					
+				}	else if (guess > theNumber) {
+					
+					System.out.println(guess + " is too high. Try again!");
+					
+				}	else {
+					System.out.println("Your guess " + guess + " is correct. Thanks you!");
+				}
+
+			}
+			System.out.println("Would you like to play again?");
+			playAgain = scan.next();		
+			
+		} while (playAgain.equalsIgnoreCase("y"));
+		System.out.println("Thank you for playing. Goodbye!");
 	}
 
 }
