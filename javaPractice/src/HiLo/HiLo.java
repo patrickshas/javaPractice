@@ -9,7 +9,7 @@ public class HiLo {
 		Scanner scan = new Scanner(System.in);
 		
 		int theNumber = (int)(Math.random() * 100 + 1);
-		System.out.println( theNumber );
+//		System.out.println( theNumber );
 		
 		int guess = 0;
 		
@@ -20,6 +20,19 @@ public class HiLo {
 			guess = scan.nextInt();
 			
 			System.out.println("You entered " + guess + ".");
+			
+			if (guess < theNumber) {
+				
+				System.out.println(guess + " is too low. Try again!");
+				
+			}	else if (guess > theNumber) {
+				
+				System.out.println(guess + " is too high. Try again!");
+				
+			}	else {
+				System.out.println("Your guess " + guess + " is correct. Thanks you!");
+			}
+					
 		}
 		
 	}
