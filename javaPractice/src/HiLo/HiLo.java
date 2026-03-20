@@ -1,4 +1,4 @@
-package javaPractice;
+package HiLo;
 
 public class HiLo {
 
@@ -6,6 +6,7 @@ public class HiLo {
 		// TODO Auto-generated method stub
 		
 		int theNumber = (int)(Math.random() * 100 + 1);
+		System.out.println( theNumber );
 
 	}
 
