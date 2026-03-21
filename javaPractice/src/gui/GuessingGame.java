@@ -20,21 +20,12 @@ import javax.swing.JProgressBar;
 
 public class GuessingGame extends JFrame {
 	public GuessingGame() {
+		getContentPane().setFont(new Font("Dialog", Font.BOLD, 15));
 		
-		JRadioButton rdbtnYes = new JRadioButton("Yes");
-		rdbtnYes.setHorizontalAlignment(SwingConstants.CENTER);
-		getContentPane().add(rdbtnYes, BorderLayout.NORTH);
-		
-		JTextArea txtrWhatIsGoing = new JTextArea();
-		txtrWhatIsGoing.setTabSize(2);
-		txtrWhatIsGoing.setText("The HiLo guessing game!");
-		getContentPane().add(txtrWhatIsGoing, BorderLayout.CENTER);
-		
-		JProgressBar progressBar = new JProgressBar();
-		getContentPane().add(progressBar, BorderLayout.SOUTH);
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("No");
-		getContentPane().add(rdbtnNewRadioButton, BorderLayout.EAST);
+		JLabel lblPatsHiloGame = new JLabel("Pat's HiLo game!");
+		lblPatsHiloGame.setFont(new Font("Dialog", Font.BOLD, 15));
+		lblPatsHiloGame.setHorizontalAlignment(SwingConstants.CENTER);
+		getContentPane().add(lblPatsHiloGame, BorderLayout.NORTH);
 	}
 
 	public static void main(String[] args) {
