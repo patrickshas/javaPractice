@@ -21,20 +21,20 @@ import javax.swing.JProgressBar;
 public class GuessingGame extends JFrame {
 	public GuessingGame() {
 		
-		JRadioButton rdbtnYes = new JRadioButton("yes");
+		JRadioButton rdbtnYes = new JRadioButton("Yes");
 		rdbtnYes.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(rdbtnYes, BorderLayout.NORTH);
 		
 		JTextArea txtrWhatIsGoing = new JTextArea();
-		txtrWhatIsGoing.setText("What is going on??");
+		txtrWhatIsGoing.setTabSize(2);
+		txtrWhatIsGoing.setText("The HiLo guessing game!");
 		getContentPane().add(txtrWhatIsGoing, BorderLayout.CENTER);
-		
-		JLabel lblDingDing = new JLabel("ding ding");
-		lblDingDing.setHorizontalAlignment(SwingConstants.CENTER);
-		getContentPane().add(lblDingDing, BorderLayout.WEST);
 		
 		JProgressBar progressBar = new JProgressBar();
 		getContentPane().add(progressBar, BorderLayout.SOUTH);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("No");
+		getContentPane().add(rdbtnNewRadioButton, BorderLayout.EAST);
 	}
 
 	public static void main(String[] args) {
