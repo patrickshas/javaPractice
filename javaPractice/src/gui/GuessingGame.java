@@ -20,6 +20,7 @@ import javax.swing.JProgressBar;
 
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;
+	private JLabel lblOutput;
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Dialog", Font.BOLD, 15));
 		getContentPane().setLayout(null);
@@ -44,7 +45,7 @@ public class GuessingGame extends JFrame {
 		btnSubmit.setBounds(158, 187, 139, 25);
 		getContentPane().add(btnSubmit);
 		
-		JLabel lblOutput = new JLabel("Make a guess and press submit!");
+		lblOutput = new JLabel("Make a guess and press submit!");
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOutput.setBounds(101, 236, 247, 15);
 		getContentPane().add(lblOutput);
