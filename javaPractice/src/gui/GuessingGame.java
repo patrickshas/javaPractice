@@ -19,7 +19,7 @@ import javax.swing.JProgressBar;
 
 
 public class GuessingGame extends JFrame {
-	private JTextField textField;
+	private JTextField txtGuess;
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Dialog", Font.BOLD, 15));
 		getContentPane().setLayout(null);
@@ -30,10 +30,10 @@ public class GuessingGame extends JFrame {
 		lblPatsHiloGame.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblPatsHiloGame);
 		
-		textField = new JTextField();
-		textField.setBounds(358, 115, 66, 33);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		txtGuess = new JTextField();
+		txtGuess.setBounds(358, 115, 66, 33);
+		getContentPane().add(txtGuess);
+		txtGuess.setColumns(10);
 		
 		JLabel lblEnterANumber = new JLabel("Enter a number between 0 and 100:");
 		lblEnterANumber.setBounds(82, 106, 286, 51);
@@ -44,10 +44,10 @@ public class GuessingGame extends JFrame {
 		btnSubmit.setBounds(158, 187, 139, 25);
 		getContentPane().add(btnSubmit);
 		
-		JLabel lblMakeAGuess = new JLabel("Make a guess and press submit!");
-		lblMakeAGuess.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMakeAGuess.setBounds(101, 236, 247, 15);
-		getContentPane().add(lblMakeAGuess);
+		JLabel lblOutput = new JLabel("Make a guess and press submit!");
+		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOutput.setBounds(101, 236, 247, 15);
+		getContentPane().add(lblOutput);
 	}
 
 	public static void main(String[] args) {
