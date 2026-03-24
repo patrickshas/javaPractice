@@ -21,6 +21,13 @@ import javax.swing.JProgressBar;
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;
 	private JLabel lblOutput;
+	private int theNumber;
+	
+	public void checkGuess() {
+		String guessTxt = txtGuess.getText();
+		String message = "";
+	}
+	
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Dialog", Font.BOLD, 15));
 		getContentPane().setLayout(null);
