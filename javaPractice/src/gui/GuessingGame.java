@@ -26,6 +26,14 @@ public class GuessingGame extends JFrame {
 	public void checkGuess() {
 		String guessTxt = txtGuess.getText();
 		String message = "";
+		int guess = Integer.parseInt(guessTxt);
+		
+		if (guess < theNumber)
+			message = guess + " is too low. Please try again!";
+		else if (guess > theNumber)
+			message = guess + " is too high. Please try again!";
+		else
+			message = guess + "is correct. Thank you!";
 	}
 	
 	public GuessingGame() {
