@@ -38,6 +38,10 @@ public class GuessingGame extends JFrame {
 		lblOutput.setText(message);
 	}
 	
+	public void newGame() {
+		theNumber = (int) (Math.random() * 100 + 1);
+	}
+	
 	public GuessingGame() {
 		getContentPane().setFont(new Font("Dialog", Font.BOLD, 15));
 		getContentPane().setLayout(null);
@@ -62,6 +66,14 @@ public class GuessingGame extends JFrame {
 		btnSubmit.setBounds(158, 187, 139, 25);
 		getContentPane().add(btnSubmit);
 		
+		btnSubmit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				checkGuess();
+			}
+		});
+		
 		lblOutput = new JLabel("Make a guess and press submit!");
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOutput.setBounds(101, 236, 247, 15);
@@ -72,8 +84,9 @@ public class GuessingGame extends JFrame {
 
 		GuessingGame theGame = new GuessingGame();
 		
+		theGame.newGame();
 		theGame.setSize(new Dimension(550,300));
-		theGame.setVisible(true);
+		theGame.setVisible(true);		
 		
 	}
 }
