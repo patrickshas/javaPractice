@@ -34,6 +34,8 @@ public class GuessingGame extends JFrame {
 			message = guess + " is too high. Please try again!";
 		else
 			message = guess + "is correct. Thank you!";
+		
+		lblOutput.setText(message);
 	}
 	
 	public GuessingGame() {
