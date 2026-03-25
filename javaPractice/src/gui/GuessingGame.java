@@ -26,16 +26,26 @@ public class GuessingGame extends JFrame {
 	public void checkGuess() {
 		String guessTxt = txtGuess.getText();
 		String message = "";
-		int guess = Integer.parseInt(guessTxt);
 		
-		if (guess < theNumber)
-			message = guess + " is too low. Please try again!";
-		else if (guess > theNumber)
-			message = guess + " is too high. Please try again!";
-		else
-			message = guess + "is correct. Thank you!";
+		try {
+			int guess = Integer.parseInt(guessTxt);
+			
+			if (guess < theNumber)
+				message = guess + " is too low. Please try again!";
+			else if (guess > theNumber)
+				message = guess + " is too high. Please try again!";
+			else {
+				message = guess + "is correct. Thank you! Let's play again!";
+				newGame();
+			}
+		} catch (Exception e) {
+			message = "Please enter an integer number between 0 and 100.";
+		} finally {
+			lblOutput.setText(message);
+			txtGuess.requestFocus();
+			txtGuess.selectAll();
+		}
 		
-		lblOutput.setText(message);
 	}
 	
 	public void newGame() {
@@ -57,13 +67,21 @@ public class GuessingGame extends JFrame {
 		getContentPane().add(txtGuess);
 		txtGuess.setColumns(10);
 		
+		txtGuess.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				
+				checkGuess();
+			}
+		});
+		
 		JLabel lblEnterANumber = new JLabel("Enter a number between 0 and 100:");
 		lblEnterANumber.setBounds(82, 106, 286, 51);
 		lblEnterANumber.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblEnterANumber);
 		
 		JButton btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(158, 187, 139, 25);
+		btnSubmit.setBounds(155, 187, 139, 25);
 		getContentPane().add(btnSubmit);
 		
 		btnSubmit.addActionListener(new ActionListener() {
@@ -76,7 +94,7 @@ public class GuessingGame extends JFrame {
 		
 		lblOutput = new JLabel("Make a guess and press submit!");
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
-		lblOutput.setBounds(101, 236, 247, 15);
+		lblOutput.setBounds(82, 236, 286, 15);
 		getContentPane().add(lblOutput);
 	}
 
